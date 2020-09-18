@@ -1,0 +1,19 @@
+events {}
+http
+{
+ upstream newsproxy{
+ server 127.0.0.1:8050;
+}
+
+  server {
+    # Running port
+    listen 8080;
+
+location /api/news/{
+proxy_pass http://newsproxy;
+}
+
+location /api/polls/{
+proxy_pass http://127.0.0.1:8060;
+}
+
