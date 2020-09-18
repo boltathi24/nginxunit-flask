@@ -1,0 +1,10 @@
+- Able to run with Gunicorn in specific port in GCP with Below Instructions:
+1.Create a vm machine
+2. Execute below commands for installig required application
+sudo apt install git-all
+sudo apt-get install python-pip
+sudo apt install gunicorn
+3.install dependencies
+4.Change Default Python to Python 3 - sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+5.cgit clone https://github.com/boltathi24/readvoice.git
+6.sudo gunicorn --bind 0.0.0.0:portnumber filename:app
