@@ -1,0 +1,18 @@
+{
+    "listeners": {
+        "*:8090": {
+            "pass": "applications/flask_app"
+        }
+    },
+
+    "applications": {
+        "flask_app": {
+            "type": "python 3.8",
+            "user": "athithan-7130",
+
+            "path": "/home/local/ZOHOCORP/athithan-7130/Music/nginxunit-flask",
+            "home": "/home/local/ZOHOCORP/athithan-7130/Music/nginxunit-flask/newvenv",
+            "module": "app"
+        }
+    }
+}
