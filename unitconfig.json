@@ -12,7 +12,7 @@
 
             "path": "/home/local/ZOHOCORP/athithan-7130/unitdiscovery",
             "home": "/home/local/ZOHOCORP/athithan-7130/unitdiscovery/myvenv/",
-            "module": "wsgi"
+            "module": "app"
         }
     }
 }
