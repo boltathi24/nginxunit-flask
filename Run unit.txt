@@ -1,0 +1,27 @@
+sudo apt update
+sudo apt install python3-virtualenv
+git clone https://github.com/boltathi24/nginxunit-flask.git
+cd nginxunit-flask
+virtualenv newvenv
+source newvenv/bin/activate
+pip3 install -r requirements.txt
+deactivate
+
+sudo curl -sL https://nginx.org/keys/nginx_signing.key | sudo apt-key add -
+
+cd /etc/apt/sources.list.d
+sudo nano unit.list
+
+deb https://packages.nginx.org/unit/ubuntu/ focal unit
+deb-src https://packages.nginx.org/unit/ubuntu/ focal unit
+
+sudo apt update
+
+sudo apt install unit
+
+sudo apt install unit-python3.8
+
+sudo systemctl restart unit
+cd nginxunit-flask
+
+sudo curl -X PUT --data-binary @config.json --unix-socket /run/control.unit.sock http://0.0.0.0/config/
